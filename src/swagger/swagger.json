@@ -1,0 +1,62 @@
+{
+    "swagger": "2.0",
+  "info": {
+    "title": "Your API",
+    "version": "1.0.0",
+    "description": "API documentation for your project."
+  },
+  "host": "dev-backend.travelhero.ph",
+  "schemes": [
+    "http",
+    "https"
+  ],
+    "paths": {
+      "/": {
+        "get": {
+          "summary": "Get admin data",
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Admin"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "Admin": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "wallet_address": {
+              "type": "string",
+              "required": true
+            },
+            "is_primary": {
+              "type": "boolean"
+            },
+            "status": {
+              "type": "number"
+            },
+            "created_at": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        }
+      }
+    }
+  }
+  
